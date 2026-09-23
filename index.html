@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyTrack</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>StudyTrack</h1>
+      <p>Your personal study progress companion</p>
+    </div>
+    <button id="resetBtn" class="ghost-btn">Reset Progress</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="badge">Student Dashboard</span>
+        <h2>Learn. Practice. Improve.</h2>
+        <p>Upload study material, review a summary, test yourself, and keep track of your progress.</p>
+      </div>
+      <div class="progress-card">
+        <div class="progress-number" id="progressPercent">0%</div>
+        <div class="progress-label">Overall progress</div>
+        <div class="progress-bar"><span id="progressBar"></span></div>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card"><span>Materials</span><strong id="materialCount">0</strong></article>
+      <article class="stat-card"><span>Quizzes completed</span><strong id="quizCount">0</strong></article>
+      <article class="stat-card"><span>Best quiz score</span><strong id="bestScore">0%</strong></article>
+      <article class="stat-card"><span>Study points</span><strong id="studyPoints">0</strong></article>
+    </section>
+
+    <div class="grid-2">
+      <section class="card">
+        <div class="section-heading">
+          <div>
+            <h3>1. Study Materials</h3>
+            <p>For this first version, upload a text file (.txt or .md).</p>
+          </div>
+        </div>
+        <label class="upload-box" for="materialInput">
+          <span class="upload-icon">+</span>
+          <strong>Choose study material</strong>
+          <small>TXT or Markdown files</small>
+        </label>
+        <input id="materialInput" type="file" accept=".txt,.md,text/plain,text/markdown" hidden />
+        <div id="materialsList" class="list"></div>
+      </section>
+
+      <section class="card">
+        <div class="section-heading">
+          <div>
+            <h3>2. Summary</h3>
+            <p>We’ll later connect this to an AI summarization API.</p>
+          </div>
+        </div>
+        <div id="summaryBox" class="summary empty-state">Upload a text study file to generate a starter summary.</div>
+      </section>
+    </div>
+
+    <div class="grid-2">
+      <section class="card">
+        <div class="section-heading">
+          <div>
+            <h3>3. Quick Quiz</h3>
+            <p>Test your understanding of basic concepts.</p>
+          </div>
+        </div>
+        <div id="quizContainer"></div>
+        <button id="submitQuiz" class="primary-btn">Submit Quiz</button>
+        <div id="quizResult" class="result"></div>
+      </section>
+
+      <section class="card">
+        <div class="section-heading">
+          <div>
+            <h3>4. Try Work</h3>
+            <p>Practice writing your own answer before checking feedback.</p>
+          </div>
+        </div>
+        <label for="practiceQuestion">Practice question</label>
+        <p id="practiceQuestion" class="practice-question"></p>
+        <textarea id="practiceAnswer" rows="7" placeholder="Write your answer here..."></textarea>
+        <button id="checkAnswer" class="primary-btn">Check My Answer</button>
+        <div id="practiceFeedback" class="result"></div>
+      </section>
+    </div>
+
+    <section class="card roadmap">
+      <div class="section-heading">
+        <div>
+          <h3>Coming next</h3>
+          <p>These are the features we can build in later Git commits.</p>
+        </div>
+      </div>
+      <div class="roadmap-grid">
+        <div>📄 PDF & Word uploads</div>
+        <div>🤖 Real AI summaries</div>
+        <div>🧠 AI-generated quizzes</div>
+        <div>📊 Subject progress tracking</div>
+        <div>🔐 Student accounts</div>
+        <div>☁️ Database + cloud storage</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>StudyTrack • Built step by step with Git & GitHub</footer>
+  <script src="script.js"></script>
+</body>
+</html>
